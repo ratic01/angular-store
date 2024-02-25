@@ -1,1 +1,16 @@
-<p>cart works!</p>
+<h2>Checkout</h2>
+<hr />
+
+<div *ngIf="items.length > 0; else noItems">
+  <p>Your current cart includes these items:</p>
+  <div class="alert alert-info" *ngFor="let product of items">
+    <h4>{{ product.name }}</h4>
+    <hr />
+    <h6>{{ product.price | currency }}</h6>
+  </div>
+  <h4 class="text-right">Total price: {{ items | sun | currency }}</h4>
+</div>
+
+<ng-template #noItems>
+  <p>This cart is empty</p>
+</ng-template>

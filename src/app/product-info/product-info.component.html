@@ -4,7 +4,7 @@
 
 <div>
   <h3>{{ product.name }}</h3>
-  <h4>${{ product.price }}</h4>
+  <h4>{{ product.price | currency : "EUR" }}</h4>
   <p>{{ product.description }}</p>
   <button class="btn btn-primary" (click)="addToCart()">Add to cart</button>
 </div>
